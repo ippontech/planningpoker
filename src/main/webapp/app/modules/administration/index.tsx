@@ -8,10 +8,12 @@ import Metrics from './metrics/metrics';
 import Configuration from './configuration/configuration';
 import Audits from './audits/audits';
 import Docs from './docs/docs';
+import Tracker from './tracker/tracker';
 
 const Routes = ({ match }) => (
   <div>
     <Route path={`${match.url}/user-management`} component={UserManagement} />
+    <Route exact path={`${match.url}/tracker`} component={Tracker} />
     <Route exact path={`${match.url}/health`} component={Health} />
     <Route exact path={`${match.url}/metrics`} component={Metrics} />
     <Route exact path={`${match.url}/docs`} component={Docs} />
