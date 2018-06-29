@@ -39,7 +39,7 @@ public class RoomActivityService implements ApplicationListener<SessionDisconnec
         activityDTO.setSessionId(stompHeaderAccessor.getSessionId());
         activityDTO.setIpAddress(stompHeaderAccessor.getSessionAttributes().get(IP_ADDRESS).toString());
         activityDTO.setTime(Instant.now());
-        log.debug("Sending room tracking data {}", activityDTO);
+        log.info("Sending room tracking data {}", activityDTO);
         return activityDTO;
     }
 

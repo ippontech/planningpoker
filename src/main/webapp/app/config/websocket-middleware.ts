@@ -27,9 +27,15 @@ const createListener = (): Observable<any> =>
 
 const sendActivity = () => {
   connection.then(() => {
+    let param = { roomActivityAction: null };
+    if (window.location.hash === '#/') {
+      param = { roomActivityAction: 'JOIN' };
+    } else {
+      param = { roomActivityAction: 'LEAVE' };
+    }
     stompClient.send(
-      '/topic/activity', // destination
-      JSON.stringify({ page: window.location.hash }), // body
+      '/topic/room-activity', // destination
+      JSON.stringify(param), // body
       {} // header
     );
   });
@@ -37,7 +43,7 @@ const sendActivity = () => {
 
 const subscribe = () => {
   connection.then(() => {
-    subscriber = stompClient.subscribe('/topic/tracker', data => {
+    subscriber = stompClient.subscribe('/topic/room-tracker', data => {
       listenerObserver.next(JSON.parse(data.body));
     });
   });

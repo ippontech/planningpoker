@@ -1,5 +1,7 @@
 package com.ippon.dojo.web.websocket.dto;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 import java.time.Instant;
 
 public class RoomActivityDTO {
@@ -61,5 +63,17 @@ public class RoomActivityDTO {
 
     public void setTime(Instant time) {
         this.time = time;
+    }
+
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this)
+            .append("sessionId", sessionId)
+            .append("roomActivityAction", roomActivityAction)
+            .append("userLogin", userLogin)
+            .append("ipAddress", ipAddress)
+            .append("page", page)
+            .append("time", time)
+            .toString();
     }
 }
