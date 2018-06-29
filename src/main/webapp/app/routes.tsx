@@ -13,6 +13,7 @@ import Admin from 'app/modules/administration';
 import Entities from 'app/entities';
 import PrivateRoute from 'app/shared/auth/private-route';
 import { AUTHORITIES } from 'app/config/constants';
+import Tracker from 'app/modules/administration/tracker/tracker';
 
 const Routes = () => (
   <div className="view-routes">
@@ -20,6 +21,7 @@ const Routes = () => (
     <Switch>
       <Route path="/logout" component={Logout} />
       <Route path="/register" component={Register} />
+      <Route path="/tracker" component={Tracker} />
       <Route path="/activate/:key?" component={Activate} />
       <Route path="/reset/request" component={PasswordResetInit} />
       <Route path="/reset/finish/:key?" component={PasswordResetFinish} />
