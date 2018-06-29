@@ -1,0 +1,18 @@
+entity Story {
+	name String,
+    description String,
+    estimate Long
+}
+
+entity Vote {
+	estimate Long
+}
+
+
+relationship ManyToOne {
+	Vote to User
+}
+
+relationship OneToMany {
+	Story to Vote
+}

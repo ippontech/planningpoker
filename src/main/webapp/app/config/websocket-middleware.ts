@@ -28,11 +28,8 @@ const createListener = (): Observable<any> =>
 const sendActivity = () => {
   connection.then(() => {
     let param = { roomActivityAction: null };
-    if (window.location.hash === '#/') {
-      param = { roomActivityAction: 'JOIN' };
-    } else {
-      param = { roomActivityAction: 'LEAVE' };
-    }
+    param = { roomActivityAction: window.location.hash === '#/' ? 'JOIN' : 'LEAVE' };
+
     stompClient.send(
       '/topic/room-activity', // destination
       JSON.stringify(param), // body

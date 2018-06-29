@@ -1,0 +1,34 @@
+{
+    "name": "Story",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "estimate",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "story",
+            "otherEntityName": "vote",
+            "otherEntityRelationshipName": "story"
+        }
+    ],
+    "changelogDate": "20180629182921",
+    "entityTableName": "story",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
