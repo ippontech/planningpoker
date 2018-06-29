@@ -33,6 +33,7 @@
     "languages": [
       "en",
       "fr"
-    ]
+    ],
+    "herokuAppName": "polar-eyrie-33818"
   }
 }
