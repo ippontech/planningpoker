@@ -8,7 +8,6 @@ import io.github.jhipster.config.JHipsterConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.actuate.autoconfigure.metrics.jdbc.DataSourcePoolMetricsAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.liquibase.LiquibaseProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -19,7 +18,7 @@ import java.net.InetAddress;
 import java.util.Arrays;
 import java.util.Collection;
 
-@SpringBootApplication(exclude = DataSourcePoolMetricsAutoConfiguration.class)
+@SpringBootApplication
 @EnableConfigurationProperties({LiquibaseProperties.class, ApplicationProperties.class})
 public class PlanningpokerApp {
 

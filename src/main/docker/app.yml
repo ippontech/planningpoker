@@ -7,26 +7,9 @@ services:
             - SPRING_PROFILES_ACTIVE=prod,swagger
             - SPRING_DATASOURCE_URL=jdbc:postgresql://planningpoker-postgresql:5432/planningpoker
             - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
-            - SPRING_DATA_ELASTICSEARCH_CLUSTER_NODES=planningpoker-elasticsearch:9300
-            - SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS=kafka
-            - SPRING_CLOUD_STREAM_KAFKA_BINDER_ZK_NODES=zookeeper
         ports:
             - 8080:8080
     planningpoker-postgresql:
         extends:
             file: postgresql.yml
             service: planningpoker-postgresql
-    planningpoker-elasticsearch:
-        extends:
-            file: elasticsearch.yml
-            service: planningpoker-elasticsearch
-    kafka:
-        extends:
-            file: kafka.yml
-            service: kafka
-        environment:
-            - KAFKA_ADVERTISED_HOST_NAME=kafka
-    zookeeper:
-        extends:
-            file: kafka.yml
-            service: zookeeper

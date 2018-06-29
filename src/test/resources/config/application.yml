@@ -19,15 +19,6 @@ spring:
         name: planningpoker
     cache:
         type: simple
-    cloud:
-        stream:
-            kafka:
-                binder:
-                    brokers: localhost
-                    zk-nodes: localhost
-            bindings:
-                output:
-                    destination: topic-jhipster
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
         url: jdbc:h2:mem:planningpoker;DB_CLOSE_DELAY=-1
@@ -95,7 +86,7 @@ jhipster:
     security:
         authentication:
             jwt:
-                secret: c50a6d1c92b558af2bcf1c2201712fb05fe0918b
+                secret: 53d0ad807a1b276d95275fc0cfa44e125ec733ab
                 # Token is valid 24 hours
                 token-validity-in-seconds: 86400
     metrics: # DropWizard Metrics configuration, used by MetricsConfiguration
